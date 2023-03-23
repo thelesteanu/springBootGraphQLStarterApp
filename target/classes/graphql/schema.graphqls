@@ -1,0 +1,60 @@
+###### Queries
+#type Query {
+#    authors: [Author]
+#    authorById(id: ID!): Author
+#}
+
+type Author{
+    id: ID!
+    name: String!
+    books: [Book]
+    bestSellerNumber: Int
+}
+type Book{
+    id: ID!
+    title: String!
+    publisher: String
+}
+
+
+
+
+
+
+
+
+###### Mutations
+type Mutation{
+    sayHi(name:String):String
+    addBook(book: BookInput): Book
+}
+input BookInput{
+    title: String!
+    publisher: String
+    authorId: ID
+}
+
+
+
+
+
+
+
+
+
+
+
+###### Reactive
+type Query {
+    greeting: String
+    greetingMono : String
+    greetingsFlux : [String]
+}
+
+###### Web sockets
+type Subscription {
+    greetings: String
+}
+
+
+
