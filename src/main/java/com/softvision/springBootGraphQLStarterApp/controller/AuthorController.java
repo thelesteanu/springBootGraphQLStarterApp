@@ -16,7 +16,6 @@ import java.util.Random;
 
 @Controller
 @Log
-
 public class AuthorController {
 
     private final AuthorRepository authorRepository;
@@ -38,6 +37,12 @@ public class AuthorController {
     }
 
 
+
+
+
+
+
+
     //////////// EXTEND QUERIES for custom data provider
     @SchemaMapping
     public Integer bestSellerNumber(Author author) {
@@ -45,6 +50,13 @@ public class AuthorController {
         Random random = new Random();
         return random.nextInt(10);
     }
+
+
+
+
+
+
+
 
 
     //////////// MUTATIONS

@@ -1,8 +1,8 @@
 ###### Queries
-#type Query {
-#    authors: [Author]
-#    authorById(id: ID!): Author
-#}
+type Query {
+    authors: [Author]
+    authorById(id: ID!): Author
+}
 
 type Author{
     id: ID!
@@ -45,11 +45,11 @@ input BookInput{
 
 
 ###### Reactive
-type Query {
-    greeting: String
-    greetingMono : String
-    greetingsFlux : [String]
-}
+#type Query {
+#    greeting: String
+#    greetingMono : String
+#    greetingsFlux : [String]
+#}
 
 ###### Web sockets
 type Subscription {
