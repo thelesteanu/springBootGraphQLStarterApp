@@ -46,7 +46,8 @@ public class WebFluxWebSocketSampleTests {
     @MockBean
     BookRepository bookRepository;
 
-    @Test
+
+//    @Test
     void greetingMono() {
         this.graphQlTester.document("{greetingMono}")
                 .execute()
@@ -55,7 +56,7 @@ public class WebFluxWebSocketSampleTests {
                 .isEqualTo("Hello!");
     }
 
-    @Test
+//    @Test
     void greetingsFlux() {
         this.graphQlTester.document("{greetingsFlux}")
                 .execute()

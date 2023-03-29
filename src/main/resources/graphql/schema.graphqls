@@ -2,6 +2,9 @@
 type Query {
     authors: [Author]
     authorById(id: ID!): Author
+
+    findAwesomeBookById(id: ID!): Book
+    findAwesomeBookByTitle(title: String!): Book
 }
 
 type Author{

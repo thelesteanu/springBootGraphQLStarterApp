@@ -25,10 +25,13 @@ public class SpringBootGraphQlStarterAppApplication {
             Author mark = authorRepository.save(new Author(null, "Mark Montagne"));
             Author andi = authorRepository.save(new Author(null, "Andi Flaqui"));
 
+            Book book1 = new Book(null, "Reactive Spring", "Penguin", mark);
+            Book book2 = new Book(null, "Dancing in the moonlight", "O'Reilly", mark);
+            Book book3 = new Book(null, "Eternal spotless", "Penguin", andi);
             bookRepository.saveAll(List.of(
-                    new Book(null, "Reactive Spring", "Penguin", mark),
-                    new Book(null, "Dancing in the moonlight", "O'Reilly", mark),
-                    new Book(null, "Eternal spotless", "Penguin", andi)));
+                    book1,
+                    book2,
+                    book3));
         };
     }
 }
