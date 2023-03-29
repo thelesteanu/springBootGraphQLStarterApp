@@ -5,14 +5,14 @@ import com.softvision.springBootGraphQLStarterApp.entity.Book;
 import com.softvision.springBootGraphQLStarterApp.repository.AuthorRepository;
 import com.softvision.springBootGraphQLStarterApp.repository.BookRepository;
 import lombok.extern.java.Log;
-import org.springframework.graphql.data.method.annotation.Argument;
-import org.springframework.graphql.data.method.annotation.MutationMapping;
-import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.graphql.data.method.annotation.SchemaMapping;
+import org.springframework.graphql.data.method.annotation.*;
 import org.springframework.stereotype.Controller;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Controller
 @Log
@@ -46,13 +46,19 @@ public class AuthorController {
     //////////// EXTEND QUERIES for custom data provider
     @SchemaMapping
     public Integer bestSellerNumber(Author author) {
-        log.info("Author's name: " + author.getName());
+        log.info("!! Retrieving bestseller number for Author's name: " + author.getName() + " !!");
         Random random = new Random();
         return random.nextInt(10);
     }
 
-
-
+//    @BatchMapping
+//    public Map<Author, Integer> bestSellerNumber(List<Author> authorList) {
+//        Random random = new Random();
+//        log.info("!! Running batch command !! ");
+//        return authorList.stream().collect(Collectors.toMap(author -> author, author -> {
+//            return random.nextInt(10);
+//        }));
+//    }
 
 
 
