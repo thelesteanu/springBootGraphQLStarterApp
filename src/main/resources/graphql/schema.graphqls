@@ -29,7 +29,6 @@ type Book{
 
 ###### Mutations
 type Mutation{
-    sayHi(name:String):String
     addBook(book: BookInput): Book
 }
 input BookInput{

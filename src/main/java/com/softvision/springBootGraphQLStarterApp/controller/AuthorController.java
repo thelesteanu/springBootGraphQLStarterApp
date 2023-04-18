@@ -67,11 +67,6 @@ public class AuthorController {
 
     //////////// MUTATIONS
     @MutationMapping
-    String sayHi(@Argument String name) {
-        return "Hello " + name;
-    }
-
-    @MutationMapping
     Book addBook(@Argument BookInput book) {
         Author author = authorRepository.findById(book.authorId()).orElseThrow(() -> new IllegalArgumentException("Could not find author"));
         Book newBook = new Book(book.title(), book.publisher(), author);

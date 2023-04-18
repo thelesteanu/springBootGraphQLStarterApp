@@ -51,7 +51,6 @@ Example queries:
 ### Mutations
 
 # mutation{
-#   # sayHi(name:"Spring Month")
 #   addBook(book:{
 #     title:"Problems in paradise"
 #     publisher:"Diverta"
